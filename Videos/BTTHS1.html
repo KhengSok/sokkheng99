@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylevd.css">
+    <title>Battle Through The Heavens S1</title>
+</head>
+<body>
+    <div class="container">
+        <div class="mainvideo">
+            <div class="video">
+                <video src="Battle Through The Heavens S1/Battle Through The Heavens Episode 1.mp4" controls muted autoplay></video>
+                <h3 class="title">Battle Through The Heavens S1 (EP 1)</h3>
+            </div>
+        </div>
+        <div class="videolist">
+            <div class="vid active">
+                <video src="Battle Through The Heavens S1/Battle Through The Heavens Episode 1.mp4" muted ></video>
+                <h3 class="title">Battle Through The Heavens S1 (EP 1)</h3>
+            </div>
+            <div class="vid ">
+                <video src="Battle Through The Heavens S1/Battle Through The Heavens Episode 2.mp4" muted ></video>
+                <h3 class="title">Battle Through The Heavens S1 (EP 2)</h3>
+            </div>
+        </div>
+    </div>
+    <script>
+        let listVideo = document.querySelectorAll('.videolist .vid');
+        let mainVideo = document.querySelector('.mainvideo video');
+        let title = document.querySelector('.mainvideo .title');
+
+        listVideo.forEach(video =>{
+            video.onclick = () =>{
+                listVideo.forEach(vid => vid.classList.remove('active'));
+                video.classList.add('active');
+                if(video.classList.contains('active')){
+                    let src = video.children[0].getAttribute('src');
+                    mainVideo.src = src;
+                    let text = video.children[1].innerHTML;
+                    title.innerHTML = text;
+                };
+            };
+        });
+    </script>
+</body>
+<br>
+<br>
+<footer>
+    <h4>Create By Meam Sokkheng @Movie96</h4>
+</footer>
+</html>
